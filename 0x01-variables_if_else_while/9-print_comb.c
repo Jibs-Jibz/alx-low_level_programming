@@ -1,24 +1,25 @@
-nclude <stdio.h>
+#include <stdio.h>
 
 /**
-* main - Print all possible combinations of single digit numbers
-*
-* Return: Always 0 (Success)
-*/
+ * main - entry point
+ *
+ * Return: always 0 (success)
+ */
+
 int main(void)
 {
-		int number;
+	int x;
 
-		for (number = 0; number <= 9; number++)
+	for (x = 0; x < 10; x++)
+	{
+		putchar(x + '0');
+		if (x != 9)
 		{
-		putchar(number + '0');
-		if (number < 9)
-		{
-		putchar(',');
-		putchar(' ');
+			putchar(',');
+			putchar(' ');
 		}
-		}
-		putchar('\n');
+	}
+	putchar('\n');
 
 	return (0);
 }
