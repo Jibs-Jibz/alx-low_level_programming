@@ -16,7 +16,7 @@ Write a function that fills memory with a constant byte.
 * The `_memset()` function fills the first `n` bytes of the memory area pointed to by `s` with the constant byte `b`
 * Returns a pointer to the memory area `s`
 
-**Solution:** [0-memset.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/0-memset.c)
+**Solution:** [0-memset.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/0-memset.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 0-main.c
@@ -100,7 +100,7 @@ Write a function that copies memory area.
 * The `_memcpy()` function copies `n` bytes from memory area `src` to memory area `dest`
 * Returns a pointer to `dest`
 
-**Solution:** [1-memcpy.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/1-memcpy.c)
+**Solution:** [1-memcpy.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/1-memcpy.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 1-main.c
@@ -184,7 +184,7 @@ Write a function that locates a character in a string.
 * Prototype: `char *_strchr(char *s, char c);`
 * Returns a pointer to the first occurrence of the character `c` in the string `s`, or `NULL` if the character is not found
 
-**Solution:** [2-strchr.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/2-strchr.c)
+**Solution:** [2-strchr.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/2-strchr.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 2-main.c
@@ -222,7 +222,7 @@ Write a function that gets the length of a prefix substring.
 * Prototype: `unsigned int _strspn(char *s, char *accept);`
 * Returns the number of bytes in the initial segment of `s` which consist only of bytes from `accept`
 
-**Solution:** [3-strspn.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/3-strspn.c)
+**Solution:** [3-strspn.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/3-strspn.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 3-main.c
@@ -258,7 +258,7 @@ Write a function that searches a string for any of a set of bytes.
 * The `_strpbrk()` function locates the first occurrence in the string `s` of any of the bytes in the string `accept`
 * Returns a pointer to the byte in `s` that matches one of the bytes in `accept`, or `NULL` if no such byte is found
 
-**Solution:** [4-strpbrk.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/4-strpbrk.c)
+**Solution:** [4-strpbrk.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/4-strpbrk.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 4-main.c
@@ -294,7 +294,7 @@ Write a function that locates a substring.
 * The `_strstr()` function finds the first occurrence of the substring `needle` in the string `haystack`. The terminating null bytes (`\0`) are not compared
 * Returns a pointer to the beginning of the located substring, or `NULL` if the substring is not found.
 
-**Solution:** [5-strstr.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/5-strstr.c)
+**Solution:** [5-strstr.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/5-strstr.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 5-main.c
@@ -328,7 +328,7 @@ Write a function that prints the chessboard.
 
 * Prototype: `void print_chessboard(char (*a)[8]);`
 
-**Solution:** [7-print_chessboard.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/7-print_chessboard.c)
+**Solution:** [7-print_chessboard.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/7-print_chessboard.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 7-main.c 
@@ -378,7 +378,7 @@ Write a function that prints the sum of the two diagonals of a square matrix of 
 
 Note that in the following example we are casting an `int[][]` into an `int*`. This is not something you should do. The goal here is to make sure you understand how an array of array is stored in memory.
 
-**Solution:** [8-print_diagsums.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/8-print_diagsums.c)
+**Solution:** [8-print_diagsums.c](https://github.com/Jibs-Jibz/alx-low_level_programming/blob/main/0x07-pointers_arrays_strings/8-print_diagsums.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 8-main.c
@@ -421,7 +421,7 @@ Write a function that sets the value of a pointer to a char.
 
 * Prototype: `void set_string(char **s, char *to);`
 
-**Solution:** [9-set_string.c](https://github.com/monoprosito/holbertonschool-low_level_programming/blob/master/0x07-pointers_arrays_strings/9-set_string.c)
+**Solution:** [100-set_string.c](100-set_string.c)
 
 ```
 $ amonkeyprogrammer@ubuntu:~/0x07$ cat 9-main.c
