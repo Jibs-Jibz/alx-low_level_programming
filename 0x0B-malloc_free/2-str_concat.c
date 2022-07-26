@@ -1,28 +1,38 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * _calloc - function that allocates memory for an array, using malloc
- * @nmemb: number
- * @size: size of
- * Return: NULL if failed.
- */
-void *_calloc(unsigned int nmemb, unsigned int size)
+ * *str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to new space in memory or null
+ **/
+char *str_concat(char *s1, char *s2)
 {
-	char *p;
-	unsigned int a;
-	void *tmp;
-
-	if (nmemb <= 0 || size <= 0)
+	char *strDup;
+	int i, j;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	i = j = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		j++;
+	strDup = malloc(sizeof(char) * (i + j + 1));
+	if (strDup == NULL)
 		return (NULL);
-	p = malloc(nmemb * size);
-	tmp = p;
-	if (p == 0)
+	i = j = 0;
+	while (s1[i] != '\0')
 	{
-		return (NULL);
+		strDup[i] = s1[i];
+		i++;
 	}
-	for (a = 0; a < (nmemb * size); a++)
-		p[a] = 0;
-	return (tmp);
+	while (s2[j] != '\0')
+	{
+		strDup[i] = s2[j];
+		i++, j++;
+	}
+	strDup[i] = '\0';
+	return (strDup);
 }
