@@ -1,21 +1,21 @@
 #include <stdlib.h>
 /**
-  * _calloc - allocates memory for an initialized buffer
-  * @nmemb: number of memory bytes
-  * @size: number of data type bits
-  * Return: return pointer to initialized buffer
-  */
+ * *_calloc - call
+ * @nmemb: n
+ * @size: size
+ * Return: 0
+ */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *p;
 	unsigned int i;
+	char *memory;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	p = malloc(size * nmemb);
-	if (p == NULL)
+	memory = malloc(nmemb * size);
+	if (memory == NULL)
 		return (NULL);
-	for (i = 0; i < nmemb ; i++)
-		p[i] = 0;
-	return (p);
+	for (i = 0; i < nmemb * size; i++)
+		*(memory + i) = 0;
+	return ((void *)memory);
 }
