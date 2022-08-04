@@ -1,83 +1,79 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 #include "variadic_functions.h"
 /**
- * print_i - prints int
- * @list: arguement of list
- * @s: seperator
- * Return: none
+ * print_int - prints an int
+ * @args: the list of args
  */
-void print_i(va_list list, char *s)
+void print_int(va_list args)
 {
-	printf("%s%d", s, va_arg(list, int));
+	printf("%d", va_arg(args, int));
 }
 /**
- * print_c - prints char
- * @list: arguement char
- * @sep: seperator
+ * print_char - prints a char
+ * @args: the list of args
  */
-void print_c(va_list list, char *sep)
+void print_char(va_list args)
 {
-	printf("%s%c", sep, va_arg(list, int));
+	printf("%c", va_arg(args, int));
 }
 /**
- * print_s - prints string
- * @sep: seperator
- * @list: list to print
- * Return: none
+ * print_string - prints a string
+ * @args: the list of args
  */
-void print_s(va_list list, char *sep)
+void print_string(va_list args)
 {
-	char *s;
+	char *z = va_arg(args, char *);
 
-	s = va_arg(list, char *);
-	if (s == NULL)
-		s = "(nil)";
-	printf("%s%s", sep, s);
+	if (!z)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", z);
 }
 /**
- * print_f - prints floats
- * @sep: float to print
- * @list: next arguement of list to print
- * Return: none
+ * print_float - prints floats
+ * @args: the list of args
  */
-void print_f(va_list list, char *sep)
+void print_float(va_list args)
 {
-	printf("%s%f", sep, va_arg(list, double));
+	printf("%f", va_arg(args, double));
 }
 /**
- * print_all - prints out all stuff
- * @format: format is list of types of arguements
+ * print_all - prints all
+ * @format: formats of arg
  */
 void print_all(const char * const format, ...)
 {
-	va_list list;
-	char *sep;
-	int i, j;
-	fm_t fm[] = {
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
-		{NULL, NULL}
+	types_t types[] = {
+	{'c', print_char},
+	{'i', print_int},
+	{'f', print_float},
+	{'s', print_string},
+	{'\0', NULL}
 	};
-	va_start(list, format);
-	i = 0;
-	sep = "";
-	while (format != NULL && format[i] != '\0')
+	va_list args;
+	char *sep1 = "", *sep2 = ", ";
+	int count1 = 0, count2 = 0;
+
+	va_start(args, format);
+	while (format !=  NULL && format[count1] != '\0')
 	{
-		j = 0;
-		while (j < 4)
+		count2 = 0;
+		while (types[count2].z != '\0')
 		{
-			if (format[i] == *(fm[j]).fm)
+			if (format[count1] == types[count2].z)
 			{
-				fm[j].p(list, sep);
-				sep = ", ";
+				printf("%s", sep1);
+				types[count2].f(args);
+				sep1 = sep2;
 			}
-			j++;
+			count2++;
 		}
-		i++;
+		count1++;
 	}
 	printf("\n");
-	va_end(list);
+	va_end(args);
 }
